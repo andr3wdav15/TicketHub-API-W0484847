@@ -1,0 +1,138 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "TicketHub-API-W0484847",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/TicketPurchase": {
+      "get": {
+        "tags": [
+          "TicketPurchase"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "TicketPurchase"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TicketPurchase"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TicketPurchase"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TicketPurchase"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "TicketPurchase": {
+        "required": [
+          "address",
+          "city",
+          "concertId",
+          "country",
+          "creditCard",
+          "email",
+          "expiration",
+          "name",
+          "phone",
+          "postalCode",
+          "province",
+          "quantity",
+          "securityCode"
+        ],
+        "type": "object",
+        "properties": {
+          "concertId": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "email": {
+            "minLength": 1,
+            "type": "string",
+            "format": "email"
+          },
+          "name": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "phone": {
+            "minLength": 1,
+            "type": "string",
+            "format": "tel"
+          },
+          "quantity": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "creditCard": {
+            "maxLength": 16,
+            "minLength": 16,
+            "type": "string"
+          },
+          "expiration": {
+            "minLength": 1,
+            "pattern": "^(0[1-9]|1[0-2])\\/(2[0-9])$",
+            "type": "string"
+          },
+          "securityCode": {
+            "maxLength": 3,
+            "minLength": 3,
+            "type": "string"
+          },
+          "address": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "city": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "province": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "postalCode": {
+            "minLength": 1,
+            "pattern": "^[A-Za-z]\\d[A-Za-z] \\d[A-Za-z]\\d$",
+            "type": "string"
+          },
+          "country": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

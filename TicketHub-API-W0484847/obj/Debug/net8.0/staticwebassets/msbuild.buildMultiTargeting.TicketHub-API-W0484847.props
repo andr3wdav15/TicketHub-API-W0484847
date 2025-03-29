@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\TicketHub-API-W0484847.props" />
+</Project>

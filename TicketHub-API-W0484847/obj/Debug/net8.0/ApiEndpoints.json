@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "TicketHub_API_W0484847.Controllers.TicketPurchaseController",
+    "Method": "Get",
+    "RelativePath": "api/TicketPurchase",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TicketHub_API_W0484847.Controllers.TicketPurchaseController",
+    "Method": "Post",
+    "RelativePath": "api/TicketPurchase",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ticketPurchase",
+        "Type": "TicketHub_API_W0484847.TicketPurchase",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
