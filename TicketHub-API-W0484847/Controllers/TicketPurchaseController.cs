@@ -51,7 +51,8 @@ namespace TicketHub_API_W0484847.Controllers
 
             try
             {
-                await queueClient.SendMessageAsync(message);
+                var plainTextBytes = Encoding.UTF8.GetBytes(message);
+                await queueClient.SendMessageAsync(Convert.ToBase64String(plainTextBytes));
                 return Ok(new { message = "Ticket purchase successfully queued." });
             }
             catch (Exception ex)
