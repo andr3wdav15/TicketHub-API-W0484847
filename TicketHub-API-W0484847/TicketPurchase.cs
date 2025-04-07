@@ -25,11 +25,13 @@ namespace TicketHub_API_W0484847
         public int Quantity { get; set; }
 
         [Required(ErrorMessage = "CreditCard is required.")]
+        [CreditCard(ErrorMessage = "Invalid credit card number.")]
         [StringLength(
             16,
             MinimumLength = 16,
             ErrorMessage = "CreditCard number must be 16 digits."
         )]
+        [RegularExpression(@"^\d{16}$", ErrorMessage = "CreditCard number must be numerical.")]
         public string CreditCard { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "Expiration is required.")]
@@ -41,6 +43,7 @@ namespace TicketHub_API_W0484847
 
         [Required(ErrorMessage = "SecurityCode is required.")]
         [StringLength(3, MinimumLength = 3, ErrorMessage = "SecurityCode must be 3 digits.")]
+        [RegularExpression(@"^\d{3}$", ErrorMessage = "SecurityCode must be numerical.")]
         public string SecurityCode { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "Address is required.")]
