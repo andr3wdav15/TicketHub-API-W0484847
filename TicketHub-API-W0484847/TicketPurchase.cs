@@ -26,12 +26,6 @@ namespace TicketHub_API_W0484847
 
         [Required(ErrorMessage = "CreditCard is required.")]
         [CreditCard(ErrorMessage = "Invalid credit card number.")]
-        [StringLength(
-            16,
-            MinimumLength = 16,
-            ErrorMessage = "CreditCard number must be 16 digits."
-        )]
-        [RegularExpression(@"^\d{16}$", ErrorMessage = "CreditCard number must be numerical.")]
         public string CreditCard { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "Expiration is required.")]
